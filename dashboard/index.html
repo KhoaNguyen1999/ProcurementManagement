@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.79.0">
+    <title>Dashboard Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:57227/Working_Dir/dashboard/index.html">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Budgets
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Payments
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+
+      
+      <div class = "main-index-body">
+        
+        <div class = "Spend-Summary" style="float:left;display: inline">
+            <p><b>Spent Summary</b></p>
+            <div class = "total-spent-summary">
+                <div class ="total-spent" style="background-color: white">
+                    <canvas id= "pie-chart-1" width="150" height="150" style="margin-left: 20px"></canvas>
+                        <div class = "spent-summary">
+                            <b>
+                                <p id = "total-spent-text" style="text-align: center">Total Spent</p>
+                                <p id = "spent-money-text" style="margin-right: 50px">đ 100.00</p>
+                            </b>
+                                <div class ="Chart-legend">
+                                    <span class="dot" style="background-color: lightgreen; margin-top: 43px;"></span>
+                                    <span class="dot" style="background-color: lightblue; margin-top: 8px;"></span>
+                            <b>
+                                <span style="float:left;">
+                                    <p>approved</p>
+                                    <p>pending</p>
+                                </span>
+                                <span style="float:right; margin-right: -20px">
+                                    <p>15.00 đ</p>
+                                    <p>85.00 đ</p>
+                                </span>
+                            </b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "Purchase-Order-Summary" style="float:right">
+          <p><b>Purchase Order Summary</b></p>
+            <!-- Purchase order summary split into 6 canvas with equal width, height-->
+              <div class = "Purchase-Order-Summary-Canvas-1">
+                  <p style="text-align: center;"><b>APPROVED</b></p>
+                  <p style="text-align: center;">5</p>
+              </div>
+
+              <div class = "Purchase-Order-Summary-Canvas-2">
+                <p style="text-align: center;"><b>SENT TO SUPPLIER</b></p>
+                <p style="text-align: center;">3</p>
+              </div>
+
+              <div class = "Purchase-Order-Summary-Canvas-3">
+                <p style="text-align: center;"><b>DELIVERED</b></p>
+                <p style="text-align: center;">3</p>
+              </div>
+
+              <div class = "Purchase-Order-Summary-Canvas-4">
+                <p style="text-align: center;"><b>INVOICE RECEIVED</b></p>
+                <p style="text-align: center;">2</p>
+              </div>
+
+              <div class = "Purchase-Order-Summary-Canvas-5">
+                <p style="text-align: center;"><b>READY TO PAY</b></p>
+                <p style="text-align: center;">1</p>
+              </div>
+
+              <div class = "Purchase-Order-Summary-Canvas-6">
+                <p style="text-align: center;"><b>PAID</b></p>
+                <p style="text-align: center;">2</p>
+              </div>
+        </div>
+          
+        <div class = "seperate_budgets">
+            <div class="Budget_Summary">
+                <div class="budget-canvas">
+                    <div id="chartContainer_budgets" style="height: 300px; max-width: 920px; margin: 0px auto;">
+                    </div>
+                </div>
+          
+            </div>
+          
+            <div class="Departments_Summary">
+                <div class="depaetments-canvas">
+                    <div id="chartContainer_departments" style="height: 300px; max-width: 920px; margin: 0px auto;">
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+        <div class = "Top_Suppliers">
+            <div class="top_supplier_canvas" style="float: left">
+                <div id="barchart_material" style="width: 400px; height: 300px;"></div>
+            </div>
+          </div>
+          
+      </div>
+
+      <script type="text/javascript">
+        function generatePieGraph(t,e){!function(){var t=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;window.requestAnimationFrame=t}();var o,i,n=e.hasOwnProperty("pie")?e.pie:"normal",r=e.values,a=e.colors,l=!!e.hasOwnProperty("animation")&&e.animation,s=e.hasOwnProperty("animationSpeed")?e.animationSpeed:20,f=!!e.hasOwnProperty("fillTextData")&&e.fillTextData,h=e.hasOwnProperty("fillTextColor")?e.fillTextColor:"#fff",P=e.hasOwnProperty("fillTextPosition")?e.fillTextPosition:"horizontal",u=e.hasOwnProperty("fillTextAlign")?e.fillTextAlign:1.85,c=e.hasOwnProperty("doughnutHoleSize")?e.doughnutHoleSize:null,d=e.hasOwnProperty("doughnutHoleColor")?e.doughnutHoleColor:"#fff",m=e.hasOwnProperty("offset")?e.offset:null,p=null,g=L(e,"strokeStartEndPoints")?e.isStrokePie.strokeStartEndPoints:"No",v=!!L(e,"overlayStroke")&&e.isStrokePie.overlayStroke,k=L(e,"overlayStrokeColor")?e.isStrokePie.overlayStrokeColor:"#eee",M=!L(e,"strokeAnimation")||e.isStrokePie.strokeAnimation,S=L(e,"strokeAnimationSpeed")?e.isStrokePie.strokeAnimationSpeed:10,y=L(e,"stroke")?e.isStrokePie.stroke:20,w=L(e,"fontSize")?e.isStrokePie.fontSize:"60px",I=L(e,"textAlignement")?e.isStrokePie.textAlignement:"center",A=L(e,"fontFamily")?e.isStrokePie.fontFamily:"Arial",T=L(e,"fontWeight")?e.isStrokePie.fontWeight:"bold",x=document.getElementById(t),b=x.getContext("2d"),O=x.width/2,C=x.height/2,F=O,z=0,q=[],H=(o=0,r.map(t=>{o+=t}),o),E=0,R=0;if(r.length>1)for(var W=0;W<r.length;W++){var Y=0==W?0:E;E=r[W]*(100/H)+Y,q.push([Math.round(Y),Math.round(E),a[W]])}function j(){q.forEach(function(t,e){var o=t[0]/100*Math.PI*2,i=null!=m?(t[1]-m/10)/100*Math.PI*2:t[1]/100*Math.PI*2,n=((o="Top"==p?o-Math.PI/2:o)+(i="Top"==p?i-Math.PI/2:i))/2;offsetX=0==m||null==m?0:Math.cos(n)*m,offsetY=0==m||null==m?0:Math.sin(n)*m,b.beginPath(),b.moveTo(O+offsetX,C+offsetY),b.arc(O+offsetX,C+offsetY,F,o,i),b.fillStyle=t[2],b.fill(),b.fillStyle=d,b.beginPath(),b.moveTo(O,C),b.arc(O,C,c/100*C,0,2*Math.PI),b.closePath(),b.fill()})}function X(t){return t/100*(2*Math.PI)}function B(t,e,o,i,n,r,a){b.beginPath(),b.arc(t,e,o,i,n,!1),b.strokeStyle=r,b.lineWidth=a,b.stroke()}function D(t,e){b.clearRect(0,0,x.width,x.height),1==e&&(b.beginPath(),b.arc(O,C,F-y,X(0)-Math.PI/2,X(100)-Math.PI/2),b.strokeStyle=k,b.lineWidth=y,b.stroke()),b.font=T+" "+w+" "+A,b.textAlign=I,b.textBaseline="middle","Yes"==g&&B(O,C,F-y/2,X(0)-Math.PI/2,X(.1)-Math.PI/2,a[0],y),B(O,C,F-y,X(0)-Math.PI/2,X(t)-Math.PI/2,a[0],y),"Yes"==g&&B(O,C,F-y/2,X(t-.1)-Math.PI/2,X(t)-Math.PI/2,a[0],y),b.fillText(t+"%",O,C)}function L(t,e){if("object"==typeof t&&null!==t){if(t.hasOwnProperty(e))return!0;for(var o in t)if(t.hasOwnProperty(o)&&L(t[o],e))return!0}return!1}!function e(){1==r.length&&"stroke"==n?function(){var t=0;if(1==M&&0==v)var e=setInterval(function(){D(++t,v),t>=r[0]&&clearInterval(e)},S);else if(1==v){if(0==M&&D(r[0],v),1==M)var e=setInterval(function(){D(++t,v),t>=r[0]&&clearInterval(e)},S)}else D(r[0],v)}():1==l&&"normal"==n?(b.clearRect(0,0,x.width,x.height),j(),o=z/100*Math.PI*2,b.globalCompositeOperation="destination-in",b.beginPath(),b.moveTo(O,C),b.arc(O,C,F,0,o),b.fill(),b.globalCompositeOperation="source-over",z++<100&&setTimeout(function(){requestAnimationFrame(e)},s)):(j(),b.beginPath(),b.arc(O,C,F+5,0,2*Math.PI,!1),b.lineWidth=30,b.strokeStyle=d,b.stroke());var o;if(101==z){if(1==f&&"inner"==P)for(var c=0;c<r.length;c++){i=r[c]/H*Math.PI*2;var m=C/u,g="Top"==p?O+m*Math.cos(R+i/2-Math.PI/2):O+m*Math.cos(R+i/2),k="Top"==p?C+m*Math.sin(R+i/2-Math.PI/2):C+m*Math.sin(R+i/2),y=r[c]*(100/H);b.fillStyle=h,b.font="bold 16px Arial",b.textAlign="center",b.fillText(y.toFixed(1)+"%",g,k),R+=i}if(1==f&&"horizontal"==P){for(var w='<div class="pie-horizontal-list"><ul>',c=0;c<r.length;c++)w+='<li><span style="background: '+a[c]+'"></span> '+r[c]*(100/H)+" %<li>";w+="</ul></div>",x.insertAdjacentHTML("afterend",w)}if(1==f&&"vertical"==P){for(var w='<div class="pie-vertical-list-'+t+'"><ul>',c=0;c<r.length;c++)w+='<li><span style="background: '+a[c]+'"></span> '+r[c]*(100/H)+" %<li>";w+="</ul></div>",x.parentElement.insertAdjacentHTML("beforeend",w)}}}()}
+          
+          var obj1 = {
+            values: [15, 50],
+            colors: ['#4CAF50', '#00BCD4'],
+            animation: true,
+            fillTextData: true,
+            fillTextColor: '#fff',
+            fillTextAlign: 1.3, 
+            fillTextPosition: 'none',
+            doughnutHoleSize: 80,
+            doughnutHoleColor: '#fff',
+            offset: 1
+            };
+
+            generatePieGraph("pie-chart-1",obj1)
+      </script>
+      
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+        
+<script type="text/javascript">
+    window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer_budgets",
+    {
+      title:{
+        text: "BUDGETS"
+      },
+      data: [
+
+      {
+        dataPoints: [
+        { x: 1, y: 297571, label: "1"},
+        { x: 2, y: 267017,  label: "2" },
+        { x: 3, y: 175200,  label: "3"},
+        { x: 4, y: 154580,  label: "4"},
+        { x: 5, y: 297571, label: "5"},
+        { x: 6, y: 267017,  label: "6" },
+        { x: 7, y: 175200,  label: "7"},
+        { x: 8, y: 154580,  label: "8"},
+        { x: 9, y: 297571, label: "9"},
+        { x: 10, y: 267017,  label: "10" },
+        { x: 11, y: 175200,  label: "11"},
+        { x: 12, y: 154580,  label: "12"},
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+    
+    var chart_departments = new CanvasJS.Chart("chartContainer_departments",
+    {
+      title:{
+        text: "DEPARTMENTS"
+      },
+      data: [
+      {
+        dataPoints: [
+        { x: 1, y: 297571, label: "Marketing"},
+        { x: 2, y: 267017,  label: "IT" },
+        { x: 3, y: 175200,  label: "Sales"},
+        { x: 4, y: 154580,  label: "HR"},
+        ]
+      }
+      ]
+    });
+
+    chart_departments.render();
+  }
+  </script>
+        
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Suppliers', 'VND'],
+          ['Vegetable Express', 100],
+          ['Fast Food Chain', 200],
+          ['Sticky Chicken', 20],
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Top Suppliers'
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+        
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+  </body>
+</html>
