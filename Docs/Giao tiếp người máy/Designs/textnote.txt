@@ -1,0 +1,7 @@
+status rejected
+	cancelled
+	pending
+	partially delivered
+	delivered
+filter status
+edit symbol pen

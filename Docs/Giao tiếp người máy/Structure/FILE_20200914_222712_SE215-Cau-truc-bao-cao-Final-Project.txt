@@ -1,0 +1,26 @@
+CẤU TRÚC BÁO CÁO CUỐI KÌ
+
+I.	problem/problem solving (vấn đề/ cách giải quyết vấn đề)
+		- 1. Product Requirements/bussness model canvas
+		- 2. giả định (Assumptions - Page 20)
+		- 3. Hypotheses (Page 23)
+		- 4. Personas (Page 26)
+		- 5. Outcome (25, Figure 3-7. Hypothesis creation table)
+
+II.	Sketch (phác thảo)
+
+III.	Wireframes (chi tiết hơn)
+
+IV.	High Fidelity (phác thảo chi tiết) (vẽ bằng tool figma)
+
+V.	hiện thực hóa bằng công nghệ
+		- web
+		- reponse web
+		- app web
+
+VI.	đánh giá
+		- dùng kĩ thuật "A/B Testting"
+
+VII.	kết luận
+
+VIII.	nguồn tham khảo
